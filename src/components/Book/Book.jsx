@@ -20,8 +20,8 @@ const Book = ({ book }) => {
         </Link>
       </div>
       <div className="flex justify-start gap-2">
-        {tags.map((tag) => (
-          <Tag tag={tag}></Tag>
+        {tags.map((tag, index) => (
+          <Tag key={index} tag={tag}></Tag>
         ))}
       </div>
       <Link to={`books/${bookId}`}>

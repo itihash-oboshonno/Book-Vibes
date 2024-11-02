@@ -11,7 +11,9 @@ const Root = () => {
           <Outlet></Outlet>
         </div>
       </div>
-      <Footer></Footer>
+      <div className="bg-neutral">
+        <Footer></Footer>
+      </div>
     </div>
   );
 };
