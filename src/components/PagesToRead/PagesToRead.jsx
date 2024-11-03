@@ -1,9 +1,13 @@
+import { useLoaderData } from "react-router-dom";
 import CustomChart from "../CustomChart/CustomChart";
 
 const PagesToRead = () => {
+
+    const allBooks = useLoaderData();
+
     return (
         <div>
-            <CustomChart></CustomChart>
+            <CustomChart allBooks={allBooks}></CustomChart>
         </div>
     );
 };

@@ -52,7 +52,7 @@ const addingIdtoWishList = (id) => {
         alert("You've already read this book!")
     } else {
         if (existingList.includes(id)) {
-            return "This book already exists in your Wishlist!"
+            alert("This book already exists in your Wishlist!");
         } else {
             existingList.push(id);
             const storedListStr = JSON.stringify(existingList);
