@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import Tag from "../Tag/Tag";
 
 const ListedBook = ({ book }) => {
 
-  const { image, bookName, author, tags, yearOfPublishing, publisher, totalPages, category, rating } = book;
+  const { bookId, image, bookName, author, tags, yearOfPublishing, publisher, totalPages, category, rating } = book;
 
   return (
     <div className="border border-gray-200 rounded-2xl p-5 flex gap-5 shadow-lg">
@@ -88,7 +89,7 @@ const ListedBook = ({ book }) => {
         <div className="flex gap-4">
               <div className="rounded-full px-4 py-2 bg-[#328EFF] bg-opacity-15"><p className="text-[#328EFF]">Category: {category}</p></div>
               <div className="rounded-full px-4 py-2 bg-[#FFAC33] bg-opacity-15"><p className="text-[#FFAC33]">Rating: {rating}</p></div>
-              <button className="rounded-full px-4 py-2 text-white bg-primGreen">View Details</button>
+              <Link to={`/books/${bookId}`}><button className="rounded-full px-4 py-2 text-white bg-primGreen">View Details</button></Link>
         </div>
       </div>
     </div>
