@@ -2,22 +2,28 @@ import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import { theReadListIdHolder } from "../Utility/addToDB";
+import { theReadListIdHolder, theWishListIdHolder } from "../Utility/addToDB";
 import ListedBook from "../ListedBook/ListedBook";
 
 const ListedBooks = () => {
-
   const [readBooks, setReadBooks] = useState([]);
+  const [wishBooks, setWishBooks] = useState([]);
 
   const allBooks = useLoaderData();
 
-  useEffect( () => {
+  useEffect(() => {
     const readList = theReadListIdHolder();
-    
-    const readListForShow = allBooks.filter(book => readList.includes(book.bookId))
-
+    const readListForShow = allBooks.filter((book) =>
+      readList.includes(book.bookId)
+    );
     setReadBooks(readListForShow);
-  }, [])
+
+    const wishList = theWishListIdHolder();
+    const wishListForShow = allBooks.filter((book) =>
+      wishList.includes(book.bookId)
+    );
+    setWishBooks(wishListForShow);
+  }, []);
 
   return (
     <div>
@@ -53,15 +59,30 @@ const ListedBooks = () => {
           </TabList>
 
           <TabPanel>
-            <div><p className="my-10 text-lg">Number of Read Books: <span className="font-semibold">{readBooks.length}</span></p></div>
+            <div>
+              <p className="my-10 text-lg">
+                Number of Read Books:{" "}
+                <span className="font-semibold">{readBooks.length}</span>
+              </p>
+            </div>
             <div className="grid grid-cols-1 gap-5">
-              {
-                readBooks.map(book => <ListedBook key={book.bookId} book={book}></ListedBook>)
-              }
+              {readBooks.map((book) => (
+                <ListedBook key={book.bookId} book={book}></ListedBook>
+              ))}
             </div>
           </TabPanel>
           <TabPanel>
-            <h2>Any content 2</h2>
+            <div>
+              <p className="my-10 text-lg">
+                Books in your Wishlist:{" "}
+                <span className="font-semibold">{wishBooks.length}</span>
+              </p>
+            </div>
+            <div className="grid grid-cols-1 gap-5">
+              {wishBooks.map((book) => (
+                <ListedBook key={book.bookId} book={book}></ListedBook>
+              ))}
+            </div>
           </TabPanel>
         </Tabs>
       </div>

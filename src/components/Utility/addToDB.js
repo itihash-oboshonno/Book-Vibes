@@ -63,5 +63,5 @@ const addingIdtoWishList = (id) => {
 }
 
 
-export { addingIdToReadList, addingIdtoWishList, theReadListIdHolder }
+export { addingIdToReadList, addingIdtoWishList, theReadListIdHolder, theWishListIdHolder }
 // ei export e default dile import er time e show e kore na.
