@@ -1,25 +1,26 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import Tag from "../Tag/Tag";
+import { addingIdToReadList, addingIdtoWishList } from "../Utility/addToDB";
 
 const BookDetails = () => {
+
+  // Getting the specific id, loading data & destructuring:
   const { bookId } = useParams();
   const id = parseInt(bookId);
 
   const data = useLoaderData();
   const bookData = data.find((book) => book.bookId === id);
 
-  const {
-    image,
-    bookName,
-    author,
-    category,
-    review,
-    tags,
-    totalPages,
-    publisher,
-    yearOfPublishing,
-    rating,
-  } = bookData;
+  const { image, bookName, author, category, review, tags, totalPages, publisher, yearOfPublishing, rating, } = bookData;
+
+  // Saving in local storage for readlist:
+  const handleAddToReadList = (id) => {
+    addingIdToReadList(id);
+  }
+
+  const handleAddToWishList = (id) => {
+    addingIdtoWishList(id);
+  }
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 justify-between gap-5 md:gap-10 my-10">
@@ -59,10 +60,10 @@ const BookDetails = () => {
           Rating: <span className="font-semibold">{rating}</span>
         </p>
         <div className="flex gap-3">
-          <button className="btn hover:bg-primGreen border border-primGreen hover:text-white bg-transparent text-primGreen text-base shadow-none">
+          <button onClick={() => handleAddToReadList(id)} className="btn hover:bg-primGreen border border-primGreen hover:text-white bg-transparent text-primGreen text-base shadow-none">
             Mark As Read
           </button>
-          <button className="btn hover:bg-[#50B1C9] hover:text-white border border-[#50B1C9] bg-transparent hover:border-[#50B1C9] text-[#50B1C9] text-base">
+          <button onClick={() => handleAddToWishList(id)} className="btn hover:bg-[#50B1C9] hover:text-white border border-[#50B1C9] bg-transparent hover:border-[#50B1C9] text-[#50B1C9] text-base">
             Add To Wishlist
           </button>
         </div>

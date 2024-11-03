@@ -6,7 +6,7 @@ const Book = ({ book }) => {
   const { bookId, image, tags, bookName, author, category, rating } = book;
 
   return (
-    <div className="border border-gray-200 rounded-2xl p-5 grid gap-y-3">
+    <div className="border border-gray-200 rounded-2xl p-5 grid gap-y-3 shadow-lg">
       <div>
         <Link
           to={`books/${bookId}`}

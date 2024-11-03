@@ -8,7 +8,7 @@ const Navbar = () => {
           to="/"
           className={({ isActive }) =>
             isActive
-              ? "border border-primGreen text-primGreen hover:bg-primGreen hover:text-white"
+              ? "border border-primGreen text-primGreen hover:bg-primGreen hover:text-white focus:bg-transparent focus:text-primGreen"
               : "hover:bg-primGreen hover:text-white"
           }
         >
@@ -20,7 +20,7 @@ const Navbar = () => {
           to="/listedbooks"
           className={({ isActive }) =>
             isActive
-              ? "border border-primGreen text-primGreen hover:bg-primGreen hover:text-white"
+              ? "border border-primGreen text-primGreen hover:bg-primGreen hover:text-white focus:bg-transparent focus:text-primGreen"
               : "hover:bg-primGreen hover:text-white"
           }
         >
@@ -32,7 +32,7 @@ const Navbar = () => {
           to="/pagestoread"
           className={({ isActive }) =>
             isActive
-              ? "border border-primGreen text-primGreen hover:bg-primGreen hover:text-white"
+              ? "border border-primGreen text-primGreen hover:bg-primGreen hover:text-white focus:bg-transparent focus:text-primGreen"
               : "hover:bg-primGreen hover:text-white"
           }
         >
