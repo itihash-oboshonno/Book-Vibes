@@ -31,7 +31,7 @@ const BookDetails = () => {
         <p className="font-PlayfairD font-bold text-4xl">{bookName}</p>
         <p className="font-medium text-xl opacity-80">By: {author}</p>
         <hr />
-        <p className="font-medium">{category}</p>
+        <p className="font-medium opacity-80">{category}</p>
         <hr />
         <p>
           <span className="font-semibold">Review: </span>

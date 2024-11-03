@@ -2,11 +2,21 @@ import { Link } from "react-router-dom";
 import Tag from "../Tag/Tag";
 
 const ListedBook = ({ book }) => {
-
-  const { bookId, image, bookName, author, tags, yearOfPublishing, publisher, totalPages, category, rating } = book;
+  const {
+    bookId,
+    image,
+    bookName,
+    author,
+    tags,
+    yearOfPublishing,
+    publisher,
+    totalPages,
+    category,
+    rating,
+  } = book;
 
   return (
-    <div className="border border-gray-200 rounded-2xl p-5 flex gap-5 shadow-lg">
+    <div className="border border-gray-200 rounded-2xl p-5 grid md:flex gap-5 shadow-lg">
       <div className="bg-gray-100 rounded-xl flex items-center justify-center w-40">
         <img className="max-w-40 object-cover h-full" src={image} alt="" />
       </div>
@@ -17,7 +27,7 @@ const ListedBook = ({ book }) => {
         <div>
           <p className="font-medium opacity-80">By: {author}</p>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="grid md:flex items-center gap-4">
           <div className="flex items-center gap-4">
             <p className="font-semibold">Tags</p>
             <div className="flex items-center gap-3">
@@ -38,18 +48,13 @@ const ListedBook = ({ book }) => {
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-              />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
               />
             </svg>
             <p>Year of Publishing: {yearOfPublishing}</p>
           </div>
         </div>
-        <div className="flex gap-4 opacity-80">
+        <div className="grid md:flex gap-4 opacity-80">
           <div className="flex gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -86,10 +91,18 @@ const ListedBook = ({ book }) => {
           </div>
         </div>
         <hr />
-        <div className="flex gap-4">
-              <div className="rounded-full px-4 py-2 bg-[#328EFF] bg-opacity-15"><p className="text-[#328EFF]">Category: {category}</p></div>
-              <div className="rounded-full px-4 py-2 bg-[#FFAC33] bg-opacity-15"><p className="text-[#FFAC33]">Rating: {rating}</p></div>
-              <Link to={`/books/${bookId}`}><button className="rounded-full px-4 py-2 text-white bg-primGreen">View Details</button></Link>
+        <div className="grid md:flex gap-4">
+          <div className="rounded-full px-4 py-2 bg-[#328EFF] bg-opacity-15">
+            <p className="text-[#328EFF] text-center">Category: {category}</p>
+          </div>
+          <div className="rounded-full px-4 py-2 bg-[#FFAC33] bg-opacity-15">
+            <p className="text-[#FFAC33] text-center">Rating: {rating}</p>
+          </div>
+          <Link to={`/books/${bookId}`} className="flex justify-center">
+            <button className="w-full rounded-full px-4 py-2 text-white bg-primGreen">
+              View Details
+            </button>
+          </Link>
         </div>
       </div>
     </div>

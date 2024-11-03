@@ -12,6 +12,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import BookDetails from './components/BookDetails/BookDetails';
 import ListedBooks from './components/ListedBooks/ListedBooks';
 import ListedBook from './components/ListedBook/ListedBook';
+import PagesToRead from './components/PagesToRead/PagesToRead';
 // import App from './App.jsx' // [use kortesi na tai eta baad]
 
 const router = createBrowserRouter([
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
         path: '/listedbooks',
         element: <ListedBooks></ListedBooks>,
         loader: () => fetch('/booksData.json')
+      },
+      {
+        path: '/pagestoread',
+        element: <PagesToRead></PagesToRead>
       },
       {
         path: 'books/:bookId',
