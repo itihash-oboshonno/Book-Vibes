@@ -23,12 +23,9 @@ const CustomChart = ({allBooks}) => {
 
   // Adding my custom data to the chart from wish-list:
   const wishList = theWishListIdHolder();
-  console.log(wishList);
   const wishBooks = allBooks.filter(book => wishList.includes(book.bookId))
-  console.log(wishBooks);
 
   const data = wishBooks.map(item => ({name: item.bookName, uv:item.totalPages}));
-  console.log(data);
 
   return (
     <div className="rounded-2xl bg-gray-100 p-20 flex justify-center items-center my-10">
