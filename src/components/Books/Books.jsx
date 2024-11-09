@@ -13,7 +13,7 @@ const Books = () => {
     } , [])
 
     return (
-        <div className="my-10">
+        <div id="books" className="my-10">
             <h4 className="text-4xl font-bold font-PlayfairD text-center">Books</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-5">
                 {
