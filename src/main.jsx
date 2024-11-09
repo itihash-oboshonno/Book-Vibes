@@ -11,7 +11,6 @@ import Home from './components/Home/Home';
 import Dashboard from './components/Dashboard/Dashboard';
 import BookDetails from './components/BookDetails/BookDetails';
 import ListedBooks from './components/ListedBooks/ListedBooks';
-import ListedBook from './components/ListedBook/ListedBook';
 import PagesToRead from './components/PagesToRead/PagesToRead';
 // import App from './App.jsx' // [use kortesi na tai eta baad]
 
